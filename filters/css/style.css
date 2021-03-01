@@ -572,6 +572,7 @@ hr {
 .contacts__text {
 	color: rgb(184, 184, 184);
 	font-size: 22px;
+	text-decoration: none !important;
 }
 .contacts__image {
 	width: 400px;
@@ -1026,7 +1027,7 @@ hr {
 		font-size: 18px;
 	}
 	.banner__text {
-		font-size: 30px;
+		font-size: 26px;
 		text-align: center;
 	}
 	.banner__image {
@@ -1060,10 +1061,10 @@ hr {
 		text-align: center;
 	}
 	.s-right__img {
-		width: 350px;
-		height: 350px;
-		left: 30px;
-		top: 450px;
+		width: 270px;
+		height: 270px;
+		left: 40px;
+		top: 470px;
 	}
 	.s-right__text {
 		font-size: 8px;
@@ -1147,6 +1148,10 @@ hr {
 		font-size: 16px;
 		text-align: center;
 	}
+	.contacts__image {
+		width: 320px;
+		height: 240px;
+	}
 	.footer__title {
 		font-size: 24px;
 		text-align: center;
@@ -1160,7 +1165,8 @@ hr {
 		margin: 10px;
 	}
 	.footer__fire {
-		width: 350px;
+		width: 320px;
 		height: 210px;
+		margin: 0;
 	}
 }
