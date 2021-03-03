@@ -31,3 +31,75 @@ function menuClick () {
 }
 
 menuButton.addEventListener("click", menuClick);
+
+
+
+
+
+// ----MAIL----
+
+const form = document.getElementById("form");
+form.addEventListener("submit", formSend);
+
+async function formSend(e) {
+  e.preventDefault();
+
+  let error = formValidate(form);
+
+  let formData = new FormData(form);
+
+  if (error === 0) {
+    form.classList.add('_sending');
+    let response = await fetch('sandmail.php', {
+      method: 'POST',
+      body: formData
+    });
+    if (response.ok) {
+      let result = await response.json();
+      alert(redult.message);
+      formPreview.innerHTML = '';
+      form.reset();
+      form.classList.remove('_sending');
+    } else {
+      alert("ERROR!")
+      form.classList.remove('_sending');
+    }
+  }
+}
+
+
+function formValidate (form) {
+  let error = 0;
+  let formReq = document.querySelectorAll("._req");
+
+  for (let i = 0; i < formReq.length; i++) {
+    const input = formReq[i];
+    formRemoveError(input);
+
+    if (input.classList.contains('_email')) {
+      if (testEmail(input)) {
+        formAddError(input);
+        error++;
+      } 
+    } else {
+      if (input.value === '') {
+        formAddError(input);
+        error++;
+      }
+    }
+  }
+  return error;
+} 
+
+function formAddError (input) {
+  input.classList.add("_error");
+}
+function formRemoveError (input) {
+  input.classList.remove("_error");
+}
+
+// email test function
+
+function testEmail (input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}

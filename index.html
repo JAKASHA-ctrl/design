@@ -159,10 +159,12 @@
 					</div>
 					<div class="connection__contact-us contact-us" id="contact-us">
 						<p class="contact-us__title">CONTACT US</p>
-						<input type="text" class="contact-us__item contact-us__input" placeholder="Name" maxlength="25" required>
-						<input type="text" class="contact-us__item contact-us__input" placeholder="Email" maxlength="25" required>
-						<textarea name="" id="" cols="30" rows="10" class="contact-us__item contact-us__textarea" placeholder="Your message" required></textarea>
-						<button class="contact-us__button"\>SEND</button>
+						<form id="form" class="form__body">
+							<input type="text" name="name" class="contact-us__item contact-us__input _req" placeholder="Name" maxlength="25">
+							<input type="text" name="email" class="contact-us__item contact-us__input _req _email" placeholder="Email" maxlength="30">
+							<textarea name="message" id="" class="contact-us__item contact-us__textarea" placeholder="Your message"></textarea>
+							<button type="submit" class="contact-us__button">SEND</button>
+						</form>
 					</div>
 					<div class="connection__image"></div>
 				</div>
