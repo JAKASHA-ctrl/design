@@ -12,7 +12,7 @@ $mail->IsHTML(true);
 
 $mail->setFrom('berk.keytret@gmail.com', 'site: filters');
 
-$mail->addAdress('yakymivyura@gmail.com');
+$mail->addAddress('yakymivyura@gmail.com');
 
 $mail->Subject = 'Лист з сайту FILTERS';
 
@@ -34,10 +34,10 @@ $mail->Body = $body;
 if (!$mail->send()){
   $message = 'ERROR';
 } else {
-  $message = 'Everything is sent!'
+  $message = 'Everything is sent!';
 }
 
-$response = ['message' -> $message];
+$response = [$message];
 
 header('Content-type: application/json');
 echo json_encode($response);

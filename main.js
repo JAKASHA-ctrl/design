@@ -50,14 +50,13 @@ async function formSend(e) {
 
   if (error === 0) {
     form.classList.add('_sending');
-    let response = await fetch('sandmail.php', {
+    let response = await fetch('sendmail.php', {
       method: 'POST',
-      body: formData
+      body: JSON.stringify(formData)
     });
     if (response.ok) {
       let result = await response.json();
-      alert(redult.message);
-      formPreview.innerHTML = '';
+      alert(result[0]);
       form.reset();
       form.classList.remove('_sending');
     } else {
