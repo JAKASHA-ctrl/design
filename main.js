@@ -7,6 +7,7 @@ for (let anchor of anchors) {
   function scroll(event) {
     event.preventDefault();
     const blockId = anchor.getAttribute("data-value");
+    console.log(blockId);
     document.querySelector('' + blockId).scrollIntoView({
       behavior: "smooth",
       block: "start"
