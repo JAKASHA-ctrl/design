@@ -6,7 +6,7 @@ for (let anchor of anchors) {
   anchor.addEventListener("click", scroll);
   function scroll(event) {
     event.preventDefault();
-    const blockId = anchor.getAttribute("href");
+    const blockId = anchor.getAttribute("data-value");
     document.querySelector('' + blockId).scrollIntoView({
       behavior: "smooth",
       block: "start"
