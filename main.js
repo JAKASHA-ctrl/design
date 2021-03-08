@@ -1,19 +1,14 @@
 // ----SCROLL----
 
-const anchors = document.querySelectorAll('a[href*="#"]');
-
-for (let anchor of anchors) {
-  anchor.addEventListener("click", scroll);
-  function scroll(event) {
-    event.preventDefault();
-    const blockId = anchor.getAttribute("data-value");
-    console.log(blockId);
-    document.querySelector('' + blockId).scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    })
-  }
-}
+$('a.link').click(function() {
+  $('html, body').animate({
+    scrollTop: $($(this).attr('href')).offset().top + 'px'
+  }, {
+    duration: 1000,
+    easing: 'swing'
+  });
+  return false;
+});
 
 // ----MENU----
 
