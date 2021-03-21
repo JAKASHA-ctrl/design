@@ -3,7 +3,7 @@
 $('document').ready(function() {
   $('a.link').click(function() {
     $('html, body').animate({
-      scrollTop: $($(this).attr('href')).offset().top + 'px'
+      scrollTop: $($(this).attr('href')).offset().top - 10 + 'px'
     }, {
       duration: 1000,
       easing: 'swing'
@@ -50,11 +50,12 @@ async function formSend(e) {
     form.classList.add('_sending');
     let response = await fetch('sendmail.php', {
       method: 'POST',
-      body: JSON.stringify(formData)
+      body: formData
     });
     if (response.ok) {
+      console.log(formData);
       let result = await response.json();
-      alert(result[0]);
+      alert(result["result"]);
       form.reset();
       form.classList.remove('_sending');
     } else {
