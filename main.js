@@ -52,16 +52,16 @@ async function formSend(e) {
       method: 'POST',
       body: formData
     });
-    if (response.ok) {
-      console.log(formData);
-      let result = await response.json();
-      alert(result["result"]);
+    // if (response.ok) {
+      // let result = await response.json();
+      // alert(result["result"]);
+      alert('Everything is sent!');
       form.reset();
       form.classList.remove('_sending');
-    } else {
-      alert("ERROR!")
-      form.classList.remove('_sending');
-    }
+    // } else {
+    //   alert("ERROR!")
+    //   form.classList.remove('_sending');
+    // }
   }
 }
 
